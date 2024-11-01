@@ -20,7 +20,7 @@
         filterBtn.style.backgroundColor = "#ff935d";
         }
     }
-
+    filterBtn.addEventListener("click", changeBtnTxt);
     // For Applying Filters
     $("#inner-box").collapse(false);
     $("#inner-box2").collapse(false);
