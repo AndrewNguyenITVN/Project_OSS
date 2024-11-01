@@ -35,7 +35,7 @@ button.btn.btn-hide {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   margin-right: 30px;
-
+  width: 180px;
 }
 .btn:focus {
   box-shadow: none;
@@ -70,7 +70,9 @@ button.btn.btn-hide {
   vertical-align: middle;
   white-space: nowrap;
 }
-
+.box_type {
+  height: 500px;
+}
 .btn-join:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
@@ -104,6 +106,7 @@ button.btn.btn-hide {
     border-color: #fff;
     text-decoration: none;
 }
+
 .navbar {
   display: inline-flex;
 }
@@ -232,7 +235,7 @@ label {
 }
 #inner-box,
 #inner-box2 {
-  height: 150px;
+  height: 465px;
   overflow-y: scroll;
 }
 #inner-box2 {
@@ -299,7 +302,7 @@ label {
     transform: translateY(-10px);
     /* border-radius: 10px; */
     /* border: 2px solid rgba(0, 0, 0, 0.523); */
-    box-shadow: 2px 2px 15px #ff0101;
+    box-shadow: 2px 2px 15px #4f4f4fc2;
 }
 
 .card:hover::before {
@@ -337,14 +340,7 @@ label {
   object-fit:contain;
   display:block;
 }
-.card-body .btn-group .btn {
-  padding: 0;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  border-radius: 50%;
-  position: relative;
-}
+
 .card-body .btn-group > .btn-group:not(:last-child) > .btn,
 .card-body .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
   border-radius: 50%;
@@ -510,11 +506,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 @media (max-width: 991.5px) {
   .navbar-nav {
-    min-width: 290px;
+    min-width: 300px;
     position: absolute;
     left: -168px;
-    bottom: -146px;
-    padding: 20px 10px;
+    bottom: -55px;
+    padding: 5px 5px;
     display: block;
     background-image: none;
     z-index: 2;

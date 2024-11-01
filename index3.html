@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header">
+        <div class="bg-white rounded d-flex align-items-center justify-content-between mb-5" id="header">
             <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
                 aria-expanded="false" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()">
                 <span class="fas fa-angle-left" id="filter-angle"></span>
@@ -33,25 +33,11 @@
                 <div class="collapse navbar-collapse" id="mynav">
                     <ul class="navbar-nav d-lg-flex align-items-lg-center">
                         <li class="nav-item active">
-                            <select name="sort" id="sort">
-                                <option value="" hidden selected>Sort by</option>
-                                <option value="price">Price</option>
-                                <option value="popularity">Popularity</option>
-                                <option value="rating">Rating</option>
-                            </select>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                              </form>
                         </li>
-                        <li class="nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3">
-                            <div class="d-inline-flex align-items-center mx-lg-2" id="select2">
-                                <div class="pl-2">Products:</div>
-                                <select name="pro" id="pro">
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                </select>
-                            </div>
-                            <div class="font-weight-bold mx-2 result">18 from 200</div>
-                        </li>
-                        <li class="nav-item d-lg-none d-inline-flex"></li>
                     </ul>
                 </div>
             </nav>
@@ -79,7 +65,7 @@
                 </nav>
             </div>
         </div>
-        <div id="content" class="my-5">
+        <div id="content" class="individual-checkbox my-1">
             <div id="filterbar" class="collapse">
                 <div class="box border-bottom">
                     <div class="form-group text-center">
@@ -92,101 +78,158 @@
                             </label>
                         </div>
                     </div>
-                    <div>
-                        <label class="tick">New <input type="checkbox" checked="checked" />
-                            <span class="check"></span>
-                        </label>
-                    </div>
-                    <div>
-                        <label class="tick">Sale <input type="checkbox" /> <span class="check"></span>
-                        </label>
-                    </div>
                 </div>
-                <div class="box border-bottom">
+                <div class="box_type border-bottom">
                     <div class="box-label text-uppercase d-flex align-items-center">
-                        Outerwear
+                        Type of club
                         <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box"
                             aria-expanded="false" aria-controls="inner-box" id="out" onclick="outerFilter()">
                             <span class="fas fa-plus"></span>
                         </button>
                     </div>
                     <div id="inner-box" class="collapse mt-2 mr-1">
-                        <div class="my-1">
-                            <label class="tick">Windbreaker <input type="checkbox" checked="checked" />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick" id="check_all">ALL <input type="checkbox"  id="selectAll" onclick="toggleAllCheckboxes(this)" />
                                 <span class="check"></span>
                             </label>
                         </div>
-                        <div class="my-1">
-                            <label class="tick">Jumpsuit <input type="checkbox" />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Mathematics <input type="checkbox" id="checkbox-item"  checked="checked" />
                                 <span class="check"></span>
                             </label>
                         </div>
-                        <div class="my-1">
-                            <label class="tick">Jacket <input type="checkbox" /> <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Coat <input type="checkbox" /> <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Raincoat <input type="checkbox" />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Physics <input type="checkbox" id="checkbox-item" checked="checked" />
                                 <span class="check"></span>
                             </label>
                         </div>
-                        <div class="my-1">
-                            <label class="tick">Handbag <input type="checkbox" checked />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Chemistry <input type="checkbox" id="checkbox-item" checked="checked" />
                                 <span class="check"></span>
                             </label>
                         </div>
-                        <div class="my-1">
-                            <label class="tick">Warm vest <input type="checkbox" />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Computer Science <input type="checkbox" id="checkbox-item" checked="checked" />
                                 <span class="check"></span>
                             </label>
                         </div>
-                        <div class="my-1">
-                            <label class="tick">Wallets <input type="checkbox" checked />
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Entrepreneurship <input type="checkbox" id="checkbox-item" checked="checked" />
                                 <span class="check"></span>
                             </label>
                         </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Scientific Research <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Music <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Dance <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Fine Arts <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Photography <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Soccer <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Basketball <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Badminton <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Fitness <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Martial Arts <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Volunteering <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Foreign Language <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Book <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">International <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Soft Skills <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Self-Improvement <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Leadership <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Chess <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Cooking <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Gaming <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="individual-checkbox my-1">
+                            <label class="tick">Environmental Protection <input type="checkbox" id="checkbox-item" checked="checked" />
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="box border-bottom">
+                
+                <div class="box pb-2">
                     <div class="box-label text-uppercase d-flex align-items-center">
-                        season
-                        <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box2"
-                            aria-expanded="false" aria-controls="inner-box2">
-                            <span class="fas fa-plus"></span>
-                        </button>
-                    </div>
-                    <div id="inner-box2" class="collapse mt-2 mr-1">
-                        <div class="my-1">
-                            <label class="tick">Spring <input type="checkbox" checked="checked" />
-                                <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Summer <input type="checkbox" /> <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Autumn <input type="checkbox" checked />
-                                <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Winter <input type="checkbox" /> <span class="check"></span>
-                            </label>
-                        </div>
-                        <div class="my-1">
-                            <label class="tick">Rainy <input type="checkbox" /> <span class="check"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="box border-bottom">
-                    <div class="box-label text-uppercase d-flex align-items-center">
-                        price
+                        Number of members
                         <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#price"
                             aria-expanded="false" aria-controls="price">
                             <span class="fas fa-plus"></span>
@@ -205,56 +248,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mt-2">
+                        <div class="d-flex align-items-center justify-content-between mt-1">
                             <div>
-                                <span id="amount-left" class="font-weight-bold"></span> uah
+                                <span id="amount-left" class="font-weight-bold"></span> Members
                             </div>
                             <div>
-                                <span id="amount-right" class="font-weight-bold"></span> uah
+                                <span id="amount-right" class="font-weight-bold"></span> Members
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="box-label text-uppercase d-flex align-items-center">
-                        size
-                        <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#size"
-                            aria-expanded="false" aria-controls="size">
-                            <span class="fas fa-plus"></span>
-                        </button>
-                    </div>
-                    <div id="size" class="collapse">
-                        <div class="btn-group d-flex align-items-center flex-wrap" data-toggle="buttons">
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" /> 80
-                            </label>
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" checked /> 92
-                            </label>
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" checked /> 102
-                            </label>
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" checked /> 104
-                            </label>
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" checked /> 106
-                            </label>
-                            <label class="btn btn-success form-check-label">
-                                <input class="form-check-input" type="checkbox" checked /> 108
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <!-- Category product -->
             <div id="products">
                 <!-- Row of product -->
                 <div class="row mx-0">
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -280,10 +293,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -309,10 +322,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -338,10 +351,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -367,10 +380,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -396,10 +409,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-md-4 pt-3">
+                    <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="card-img">
-                                <img src="https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png"
+                                <img src="./img/568e304a2f9097cece81.jpg"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>

@@ -1,5 +1,5 @@
-    // For Filters
-    document.addEventListener("DOMContentLoaded", function () {
+// For Filters
+document.addEventListener("DOMContentLoaded", function () {
     var filterBtn = document.getElementById("filter-btn");
     var btnTxt = document.getElementById("btn-txt");
     var filterAngle = document.getElementById("filter-angle");
@@ -11,13 +11,13 @@
         $("#filterbar").collapse(true);
         count++;
         if (count % 2 != 0) {
-        filterAngle.classList.add("fa-angle-right");
-        btnTxt.innerText = "show filters";
-        filterBtn.style.backgroundColor = "#36a31b";
+            filterAngle.classList.add("fa-angle-right");
+            btnTxt.innerText = "show filters";
+            filterBtn.style.backgroundColor = "#36a31b";
         } else {
-        filterAngle.classList.remove("fa-angle-right");
-        btnTxt.innerText = "hide filters";
-        filterBtn.style.backgroundColor = "#ff935d";
+            filterAngle.classList.remove("fa-angle-right");
+            btnTxt.innerText = "hide filters";
+            filterBtn.style.backgroundColor = "#ff935d";
         }
     }
     filterBtn.addEventListener("click", changeBtnTxt);
@@ -31,18 +31,18 @@
     function chnageIcon() {
         count2++;
         if (count2 % 2 != 0) {
-        icon.innerText = "";
-        icon.innerHTML =
-            '<span class="far fa-times-circle" style="width:100%"></span>';
-        icon.style.paddingTop = "5px";
-        icon.style.paddingBottom = "5px";
-        icon.style.fontSize = "1.8rem";
+            icon.innerText = "";
+            icon.innerHTML =
+                '<span class="far fa-times-circle" style="width:100%"></span>';
+            icon.style.paddingTop = "5px";
+            icon.style.paddingBottom = "5px";
+            icon.style.fontSize = "1.8rem";
         } else {
-        icon.innerText = "";
-        icon.innerHTML = '<span class="navbar-toggler-icon"></span>';
-        icon.style.paddingTop = "5px";
-        icon.style.paddingBottom = "5px";
-        icon.style.fontSize = "1.2rem";
+            icon.innerText = "";
+            icon.innerHTML = '<span class="navbar-toggler-icon"></span>';
+            icon.style.paddingTop = "5px";
+            icon.style.paddingBottom = "5px";
+            icon.style.fontSize = "1.2rem";
         }
     }
 
@@ -64,12 +64,12 @@
 
     function setLeftValue() {
         var _this = inputLeft,
-        min = parseInt(_this.min),
-        max = parseInt(_this.max);
+            min = parseInt(_this.min),
+            max = parseInt(_this.max);
 
         _this.value = Math.min(
-        parseInt(_this.value),
-        parseInt(inputRight.value) - 1
+            parseInt(_this.value),
+            parseInt(inputRight.value) - 1
         );
 
         var percent = ((_this.value - min) / (max - min)) * 100;
@@ -82,12 +82,12 @@
 
     function setRightValue() {
         var _this = inputRight,
-        min = parseInt(_this.min),
-        max = parseInt(_this.max);
+            min = parseInt(_this.min),
+            max = parseInt(_this.max);
 
         _this.value = Math.max(
-        parseInt(_this.value),
-        parseInt(inputLeft.value) + 1
+            parseInt(_this.value),
+            parseInt(inputLeft.value) + 1
         );
 
         var percent = ((_this.value - min) / (max - min)) * 100;
@@ -126,4 +126,17 @@
     inputRight.addEventListener("mouseup", function () {
         thumbRight.classList.remove("active");
     });
+
+    
+});
+
+// Function to toggle all checkboxes inside <!-- Individual Checkboxes -->
+function toggleAllCheckboxes(selectAllCheckbox) {
+    // Select all checkboxes inside the "Individual Checkboxes" section
+    const checkboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
+    
+    // Set each checkbox state to match the "Select All" checkbox
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = selectAllCheckbox.checked;
     });
+}
