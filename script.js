@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     filterBtn.addEventListener("click", changeBtnTxt);
+    
     // For Applying Filters
     $("#inner-box").collapse(false);
     $("#inner-box2").collapse(false);
@@ -130,13 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
-// Function to toggle all checkboxes inside <!-- Individual Checkboxes -->
+// Function to toggle all checkboxes 
 function toggleAllCheckboxes(selectAllCheckbox) {
-    // Select all checkboxes inside the "Individual Checkboxes" section
     const checkboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
-    
-    // Set each checkbox state to match the "Select All" checkbox
     checkboxes.forEach((checkbox) => {
         checkbox.checked = selectAllCheckbox.checked;
     });
 }
+// Function to check the state of individual checkboxes
+function checkIndividualCheckboxes() {
+    const checkboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
+    const selectAllCheckbox = document.getElementById('selectAll');
+
+    const allChecked = Array.from(checkboxes).every((checkbox) => checkbox.checked);
+    selectAllCheckbox.checked = allChecked; 
+}
+
+const individualCheckboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
+individualCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', checkIndividualCheckboxes);
+});
