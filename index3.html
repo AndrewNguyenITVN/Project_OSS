@@ -6,24 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style3.css" />
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
     <div class="container">
+        <!-- Header container -->
         <div class="bg-white rounded d-flex align-items-center justify-content-between mb-5" id="header">
+            <!-- Filter toggle button -->
             <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
                 aria-expanded="false" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()">
                 <span class="fas fa-angle-left" id="filter-angle"></span>
                 <span id="btn-txt">Hide filters</span>
             </button>
+            <!-- End filter toggle button -->
+
+            <!-- Search bar -->
             <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav"
                     aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation" onclick="chnageIcon()"
@@ -41,8 +43,11 @@
                     </ul>
                 </div>
             </nav>
+            <!-- End search bar -->
+
+            <!-- Pagination controls -->
             <div class="ml-auto mt-3 mr-2">
-                <nav aria-label="Page navigation example">
+                <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -54,7 +59,7 @@
                             <a class="page-link" href="#">1</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="#">..</a></li>
-                        <li class="page-item"><a class="page-link" href="#">24</a></li>
+                        <li class="page-item"><a class="page-link" href="#">10</a></li>
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true" class="font-weight-bold">&gt;</span>
@@ -64,8 +69,13 @@
                     </ul>
                 </nav>
             </div>
+            <!-- End pagination controls -->
         </div>
+        <!-- End header container -->
+
+        <!-- Content container -->
         <div id="content" class="individual-checkbox my-1">
+            <!-- Filterbar -->
             <div id="filterbar" class="collapse">
                 <div class="box border-bottom">
                     <div class="form-group text-center">
@@ -89,7 +99,7 @@
                     </div>
                     <div id="inner-box" class="collapse mt-2 mr-1">
                         <div class="individual-checkbox my-1">
-                            <label class="tick" id="check_all">ALL <input type="checkbox"  id="selectAll" onclick="toggleAllCheckboxes(this)" />
+                            <label class="tick" id="check_all">ALL <input type="checkbox"  id="selectAll" onclick="toggleAllCheckboxes(this)" checked="checked"/>
                                 <span class="check"></span>
                             </label>
                         </div>
@@ -260,14 +270,19 @@
                 </div>
                 
             </div>
-            <!-- Category product -->
+            <!-- End filterbar -->
+
+
+            <!-- Available clubs -->
             <div id="products">
                 <!-- Row of product -->
                 <div class="row mx-0">
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -295,8 +310,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -324,8 +340,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -353,8 +370,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -382,8 +400,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -411,8 +430,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
+                            <!-- Logo of club -->
                             <div class="card-img">
-                                <img src="./img/568e304a2f9097cece81.jpg"
+                                <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
                             <div class="product-name text-center">Club Name</div>
@@ -440,8 +460,14 @@
                     </div>
                 </div>
             </div>
+            <!-- End available clubs -->
+             
         </div>
+        <!-- End content container -->
     </div>
 </body>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </html>
