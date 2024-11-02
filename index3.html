@@ -4,32 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Available Club Homepage</title>
+    <link rel="icon" href="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png">
     <link rel="stylesheet" href="style3.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-
 <body>
     <div class="container">
         <!-- Header container -->
         <div class="bg-white rounded d-flex align-items-center justify-content-between mb-5" id="header">
             <!-- Filter toggle button -->
             <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
-                aria-expanded="false" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()">
+                aria-expanded="false" aria-controls="filterbar" id="filter-btn" >
                 <span class="fas fa-angle-left" id="filter-angle"></span>
                 <span id="btn-txt">Hide filters</span>
             </button>
             <!-- End filter toggle button -->
 
-            <!-- Search bar -->
+            <!-- Search bar and filter button-->
             <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav"
-                    aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation" onclick="chnageIcon()"
-                    id="icon">
+                    aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation" id="icon">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mynav">
@@ -43,7 +39,7 @@
                     </ul>
                 </div>
             </nav>
-            <!-- End search bar -->
+            <!-- End search bar and filter button-->
 
             <!-- Pagination controls -->
             <div class="ml-auto mt-3 mr-2">
@@ -89,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="box_type border-bottom">
+                <div class="box border-bottom">
                     <div class="box-label text-uppercase d-flex align-items-center">
                         Type of club
                         <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#inner-box"
@@ -240,12 +236,12 @@
                 <div class="box pb-2">
                     <div class="box-label text-uppercase d-flex align-items-center">
                         Number of members
-                        <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#price"
-                            aria-expanded="false" aria-controls="price">
-                            <span class="fas fa-plus"></span>
+                        <button class="btn ml-auto" type="button" data-toggle="collapse" data-target="#member-count"
+                            aria-expanded="false" aria-controls="member-count" id="num_out" onclick="outerFilter2()">
+                            <span class="fas fa-minus"></span>
                         </button>
                     </div>
-                    <div class="collapse" id="price">
+                    <div class="collapse" id="member-count">
                         <div class="middle">
                             <div class="multi-range-slider">
                                 <input type="range" id="input-left" min="0" max="100" value="10" />
@@ -272,20 +268,18 @@
             </div>
             <!-- End filterbar -->
 
-
             <!-- Available clubs -->
-            <div id="products">
-                <!-- Row of product -->
+            <div id="clubs">
+                <!-- Row of club -->
                 <div class="row mx-0">
                     <div class="col-lg-4 col-md-6 pb-md-4 pt-0.5">
                         <div class="card d-flex flex-column align-items-center">
                             <!-- Logo of club -->
-                            <!-- Logo of club -->
                             <div class="card-img">
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -315,7 +309,7 @@
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -345,7 +339,7 @@
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -375,7 +369,7 @@
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -405,7 +399,7 @@
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -435,7 +429,7 @@
                                 <img src="https://icons.iconarchive.com/icons/iconarchive/badge-trophy/512/Badge-Trophy-19-icon.png"
                                     alt="" />
                             </div>
-                            <div class="product-name text-center">Club Name</div>
+                            <div class="club-name text-center">Club Name</div>
                             <div class="card-body">
                                 <div class="text-muted text-center mt-auto">
                                     <div class="info">
@@ -466,8 +460,8 @@
         <!-- End content container -->
     </div>
 </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 </html>

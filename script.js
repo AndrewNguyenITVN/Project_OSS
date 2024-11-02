@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var filterAngle = document.getElementById("filter-angle");
 
     $("#filterbar").collapse(false);
-    var count = 0,
-        count2 = 0;
+    var count = 0;
     function changeBtnTxt() {
         $("#filterbar").collapse(true);
         count++;
@@ -21,36 +20,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     filterBtn.addEventListener("click", changeBtnTxt);
-    
+
     // For Applying Filters
     $("#inner-box").collapse(false);
     $("#inner-box2").collapse(false);
 
     // For changing NavBar-Toggler-Icon
     var icon = document.getElementById("icon");
+    var myNav = document.getElementById("mynav");
+    var count2 = 0;
 
-    function chnageIcon() {
+    function changeIcon() {
         count2++;
         if (count2 % 2 != 0) {
-            icon.innerText = "";
-            icon.innerHTML =
-                '<span class="far fa-times-circle" style="width:100%"></span>';
+            // Show the close icon and expand the menu
+            icon.innerHTML = '<span class="far fa-times-circle" style="width:100%"></span>';
             icon.style.paddingTop = "5px";
             icon.style.paddingBottom = "5px";
             icon.style.fontSize = "1.8rem";
+            myNav.classList.add("show");
         } else {
-            icon.innerText = "";
+            // Show the default icon and collapse the menu
             icon.innerHTML = '<span class="navbar-toggler-icon"></span>';
             icon.style.paddingTop = "5px";
             icon.style.paddingBottom = "5px";
             icon.style.fontSize = "1.2rem";
+            myNav.classList.remove("show");
         }
     }
+    icon.addEventListener("click", changeIcon);
 
-    // Showing tooltip for AVAILABLE COLORS
-    $(function () {
-        $('[data-tooltip="tooltip"]').tooltip();
-    });
 
     // For Range Sliders
     var inputLeft = document.getElementById("input-left");
@@ -127,27 +126,69 @@ document.addEventListener("DOMContentLoaded", function () {
     inputRight.addEventListener("mouseup", function () {
         thumbRight.classList.remove("active");
     });
-
-    
 });
 
-// Function to toggle all checkboxes 
+// Function to toggle all checkboxes
 function toggleAllCheckboxes(selectAllCheckbox) {
-    const checkboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll(
+        '#inner-box .individual-checkbox input[type="checkbox"]'
+    );
     checkboxes.forEach((checkbox) => {
         checkbox.checked = selectAllCheckbox.checked;
     });
 }
 // Function to check the state of individual checkboxes
 function checkIndividualCheckboxes() {
-    const checkboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
-    const selectAllCheckbox = document.getElementById('selectAll');
+    const checkboxes = document.querySelectorAll(
+        '#inner-box .individual-checkbox input[type="checkbox"]'
+    );
+    const selectAllCheckbox = document.getElementById("selectAll");
 
-    const allChecked = Array.from(checkboxes).every((checkbox) => checkbox.checked);
-    selectAllCheckbox.checked = allChecked; 
+    const allChecked = Array.from(checkboxes).every(
+        (checkbox) => checkbox.checked
+    );
+    selectAllCheckbox.checked = allChecked;
 }
 
-const individualCheckboxes = document.querySelectorAll('#inner-box .individual-checkbox input[type="checkbox"]');
+const individualCheckboxes = document.querySelectorAll(
+    '#inner-box .individual-checkbox input[type="checkbox"]'
+);
 individualCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', checkIndividualCheckboxes);
+    checkbox.addEventListener("change", checkIndividualCheckboxes);
 });
+
+function outerFilter() {
+    const innerBox = document.getElementById("inner-box");
+    const button = document.getElementById("out");
+    const icon = button.querySelector("span");
+
+    const isNotExpanded = button.getAttribute("aria-expanded") === "false";
+
+    if (isNotExpanded) {
+        innerBox.classList.remove("show");
+        button.setAttribute("aria-expanded", "false");
+        icon.classList.replace("fa-minus", "fa-plus");
+    } else {
+        innerBox.classList.add("show");
+        button.setAttribute("aria-expanded", "true");
+        icon.classList.replace("fa-plus", "fa-minus");
+    }
+}
+
+function outerFilter2() {
+    const innerBox = document.getElementById("member-count");
+    const button = document.getElementById("num_out");
+    const icon = button.querySelector("span");
+
+    const isNotExpanded = button.getAttribute("aria-expanded") === "false";
+
+    if (isNotExpanded) {
+        innerBox.classList.remove("show");
+        button.setAttribute("aria-expanded", "false");
+        icon.classList.replace("fa-minus", "fa-plus");
+    } else {
+        innerBox.classList.add("show");
+        button.setAttribute("aria-expanded", "true");
+        icon.classList.replace("fa-plus", "fa-minus");
+    }
+}
